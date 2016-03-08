@@ -112,4 +112,4 @@ __MISC__
 * Describe what DNS is.
 * In the terminal, type `man curl`.  Look at the man page for curl.  What do the following flags do? `-v`, `-X`.  (Hint: to search for a string, type `/` then the text you want, then enter.  To quit the man page, type `q`).
 * What is TCP/IP?  How does it interact with HTTP?
-* Does HTTP break the that is being sent into small packets?  If not, what protocol is responsible for it?
+* Does HTTP break the data that is being sent into small packets?  If not, what protocol is responsible for it?

@@ -3,33 +3,140 @@
 __URLs__
 
 * Name all of the parts of the url that you can remember.  In your own words describe what they do.
+	
+ 	```
+	1. Protocol - sets http or https
+	2. domain - the local host
+	3. port 
+	4. path - the path within the domain you want
+	5. query string
+	6. anchor tag - the part on the webpage you would like to access 
+	```
+	
 * Name the pieces of the following urls:
 	* `https://www.google.com/`
+	
+	```
+	Protocol://domain
+	```
+	
 	* `https://workbook.galvanize.com/cohorts/41/learning_experiences/367`
+		
+	```
+	Protocol://domain/path
+	```
+	
 	* `http://locahost:5000/animals/puppies?onlycute=1&size=medium#firstpuppy`
+		
+	```
+	protocol://domain:port/path?queryString#anchortag
+	```
+	
 	* `https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_Error`
-* Can a server use more than 1 port?
+		
+	```
+	protocol://domain/path#anchortag
+	```	
+	
+* Can a server use more than 1 prt? 
+
+	```
+	Yes.
+	```
+
 * Why is https different than http?
+	
+	```
+As compared to http, when using HTTPS, the computers agree on a "code" between them, and then they scramble the messages using that "code" so that no one in between can read them.
+	``` 
+
 * How does a server interpret the following url's query paramter.  What data structure does it create on the server?
 
-```
-http://locahost:5000/animals?puppies=fido&puppies=max&puppies=moxie
-```
+	```
+	http://locahost:5000/animals?puppies=fido&puppies=max&puppies=moxie
+	```
+		
+	```
+	It creates an array named puppies with elements of fido, max, and moxie.
+	```
 
 __HTTP Request/Response__
 
 * Name at least 4 http verbs
+
+	```	
+	Get, post, delete, put, patch
+	```
+
 * What is each verb useful for in your own words
+
+	```
+	Get - get info from a server
+	Post - post/send info to a server
+	Delete - delete info from a server
+	Patch/Put - change an existing resource on a server. 
+	```
+
 * What does idempotent mean?
+
+	```
+	that the operation does not change the data.
+	```
+
 * Name the 5 http status code ranges.  What are they used for in general?
+
+	```
+	100 - Getting there soon
+	200 - ok
+	300 - redirect
+	400 - client side error
+	500 - server side error
+	```
+
 * If a server returns a http status code of 301 and a location of `https://www.google.com/`, what does the browser do?
+
+	```
+	it permanently redirects the request.
+	```
+
 * For the following HTTP headers, decide if the following header is used for requests, responses or both:
-	* Accept
-	* Content-type
+	* Accept 
+	
+	```
+	Request
+	```
+	
+	* Content-type 
+	
+	```
+	Response
+	```
+	
 	* User-agent
-	* Set-cookies
+	
+	```
+	Request
+	```
+	
+	* Set-cookies 
+	
+	```
+	Response
+	```
+	 
 	* Cache-control
+	
+	```
+	Both
+	```
+	
 	* Cookie
+	
+	```
+	Request
+	```
+	
+	
 * Is the following a http request or response?  How do you know for each?
 
 ```
@@ -71,6 +178,10 @@ Connection: keep-alive
   </body>
 </html>
 ```
+```
+This is a response as there is a content-type header and it's returning the HTML structure of a page.
+```
+
 
 ```
 DELETE /students/n1vmyrw3x HTTP/1.1
@@ -80,14 +191,30 @@ Cache-Control: no-cache
 Postman-Token: 0041e3c3-efdb-f0c3-b2f4-2d79f6d0f44b
 ```
 
+```
+This is a request as DELETE is a request verb
+```
+
+
 __JSON__
 
 * Describe what JSON is.  What is it used for.
+
+```
+JSON is JavaScript Object Notation which is a string of data that is used to exchange data on the web.
+```
+
 * Convert the following map into a javascript object then console log the age.
 
 ```
 { "company" : "Github", "age": 7, "categories" : "Services,Internet,Software"}
 ```
+
+```
+var GitHub = JSON.parse('{ "company" : "Github", "age": 7, "categories" : "Services,Internet,Software"}');
+console.log(Github.age);
+```
+
 * Convert the following to a javascript object.  Console log each company name.
 
 ```
@@ -107,6 +234,10 @@ var myObj = {
   categories: "Education"
 };
 ```
+```
+console.log(JSON.stringify(myObj));
+```
+
 __MISC__
 
 * Describe what DNS is.
